@@ -11,8 +11,7 @@ pipeline {
      }
      stage('Jobs') {
        steps {
-         def j = load 'jobs.groovy'
-         echo j.allJobs()
+         "${env.WORKSPACE}/jobs.groovy"
        }
      }
    }
