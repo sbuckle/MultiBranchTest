@@ -1,5 +1,5 @@
 pipeline {
-   agent any
+   agent master 
    options {
      disableConcurrentBuilds()
    }
@@ -7,6 +7,12 @@ pipeline {
      stage('Hello') {
        steps {
          echo "Hello"
+       }
+     }
+     stage('Jobs') {
+       steps {
+         def j = load 'jobs.groovy'
+         echo j.allJobs()
        }
      }
    }
