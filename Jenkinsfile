@@ -11,7 +11,7 @@ pipeline {
      }
      stage('Jobs') {
        steps {
-         "${env.WORKSPACE}/jobs.groovy"
+         sh "groovy ${env.WORKSPACE}/jobs.groovy"
        }
      }
    }
