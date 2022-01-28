@@ -11,7 +11,10 @@ pipeline {
      }
      stage('Jobs') {
        steps {
-         sh "groovy ${env.WORKSPACE}/jobs.groovy"
+         echo "Running script"
+         script {
+             println Jenkins.instance.getAllItems(Job.class).size()
+         }
        }
      }
    }
