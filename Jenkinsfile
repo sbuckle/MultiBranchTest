@@ -6,7 +6,7 @@ pipeline {
    stages {
      stage('Hello') {
        steps {
-         echo "Hello, Bob!"
+         echo "Hello, Bob! You the man"
        }
      }
    }
